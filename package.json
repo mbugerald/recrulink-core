@@ -20,7 +20,8 @@
     "analyze": "size-limit --why",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "semantic-release": "semantic-release --branches main"
+    "semantic-release": "semantic-release --branches main",
+    "commit": "git-cz"
   },
   "peerDependencies": {
     "react": ">=16"
@@ -65,6 +66,7 @@
     "@types/react-lazy-load-image-component": "^1.5.2",
     "@types/styled-components": "^5.1.26",
     "babel-loader": "^8.2.5",
+    "cz-conventional-changelog": "^3.3.0",
     "framer-motion": "^7.5.3",
     "husky": "^8.0.1",
     "react": "^18.2.0",
@@ -74,16 +76,20 @@
     "react-lazy-load-image-component": "^1.5.5",
     "react-responsive": "^9.0.0",
     "react-spinners": "^0.13.6",
+    "semantic-release": "^19.0.5",
     "size-limit": "^8.1.0",
     "styled-components": "^5.3.6",
     "tsdx": "^0.14.1",
     "tslib": "^2.4.0",
-    "typescript": "^4.8.4",
-    "semantic-release": "^19.0.5"
+    "typescript": "^4.8.4"
   },
-  "dependencies": {},
   "repository": {
     "type": "git",
     "url": "https://github.com/mbugerald/recrulink-core.git"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
