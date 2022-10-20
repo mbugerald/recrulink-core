@@ -1,0 +1,30 @@
+import {ArgsTable, Canvas, Meta, Story} from '@storybook/addon-docs';
+import {SessionAvatar} from '../src';
+
+<Meta title="COMPONENTS/Avatar/Session" component={SessionAvatar} />
+
+export const Template = (args) => <SessionAvatar {...args}/>;
+
+# Session Avatar
+
+An avatar is a visual used to represent a user. It may contain an image or a placeholder graphic. In this case the component
+visually represents the active avatar for current user session.
+
+<Canvas>
+    <Story
+        name="Playground"
+        args={{
+            children: 'Click Me!',
+        }}
+    >
+        {Template.bind({
+            image: {
+                src: "https://nationalzoo.si.edu/sites/default/files/styles/1400_scale/public/animals/exhibit/africanlion-005.jpg?itok=6wA745g_",
+                alt: "lion"
+            }
+        })}
+    </Story>
+</Canvas>
+
+
+<ArgsTable story="Playground" sort/>

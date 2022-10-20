@@ -1,2 +1,3 @@
-# recrulink-core
-This library is a Recrulink react framework design system. It consists of components, documentation, and code for building enterprise applications at scale.
+# @recrulink-core
+
+@recrulink core is a production ready component ReactJS library by Recrulink, that allows developers to build and setup projects with fast, lightweight and ready components. 
