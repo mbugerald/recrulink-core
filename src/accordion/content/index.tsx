@@ -1,6 +1,6 @@
-import React, {FC} from "react";
-import styled from "styled-components";
-import {motion, MotionProps} from "framer-motion";
+import React, {FC} from 'react';
+import styled from 'styled-components';
+import {motion, MotionProps} from 'framer-motion';
 
 export interface AccordionContentProps extends MotionProps{
     children?: any
@@ -22,29 +22,29 @@ const Base:FC<AccordionContentProps> = (
     const setCheckValue = (e: any) => {
         if (e.target.checked) {
             // @ts-ignore
-            const options = props["items"].filter((item) => item === checkValue);
+            const options = props['items'].filter((item) => item === checkValue);
             // filter through the list to see if it exists as checked value.
             // @ts-ignore
-            options.length === 0 && checkValue && props["setItems"]([...props["items"], checkValue]);
+            options.length === 0 && checkValue && props['setItems']([...props['items'], checkValue]);
         } else {
             // @ts-ignore
-            const options = props["items"].filter((item) => item !== checkValue);
+            const options = props['items'].filter((item) => item !== checkValue);
             // @ts-ignore
-            props["setItems"](options)
+            props['setItems'](options)
         }
     };
 
     // @ts-ignore
-    return props["isOpen"] ? (
+    return props['isOpen'] ? (
         <motion.dd
             {...props}
             initial={{ opacity: 0, y: 10}}
             animate={{ opacity: 1, y: 0}}
-            transition={{ type: "spring", stiffness: 30, duration: 0.45 }}
+            transition={{ type: 'spring', stiffness: 30, duration: 0.45 }}
         >
             {
                 // @ts-ignore
-                props["isCheckable"] && !noCheck && (<input type="checkbox" onChange={setCheckValue}/>)
+                props['isCheckable'] && !noCheck && (<input type='checkbox' onChange={setCheckValue}/>)
             }
             {children}
         </motion.dd>
@@ -65,10 +65,10 @@ export const AccordionContent = styled(Base)`
   
   border-bottom: ${(props) =>
           // @ts-ignore
-          props["hasBorders"] && !props.noBorder && "1px solid #f2f2f2"
+          props['hasBorders'] && !props.noBorder && '1px solid #f2f2f2'
 };
 
-  input[type="checkbox"] {
+  input[type='checkbox'] {
     appearance: none;
     -webkit-appearance: none;
     height: 20px;
@@ -83,7 +83,7 @@ export const AccordionContent = styled(Base)`
     justify-content: center;
 
     &::after {
-      content: "";
+      content: '';
       width: 60%;
       height: 60%;
       background-color: #3CB8DE;

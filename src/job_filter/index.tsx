@@ -1,9 +1,9 @@
-import React, {Dispatch, forwardRef, HTMLAttributes, SetStateAction, useEffect, useRef, useState} from "react";
-import styled, {css} from "styled-components";
-import {motion} from "framer-motion";
-import {GoLocation, GoSearch} from "react-icons/go";
-import {AiOutlineDown, AiOutlineUp} from "react-icons/ai";
-import {useMediaQuery} from "react-responsive";
+import React, {Dispatch, forwardRef, HTMLAttributes, SetStateAction, useEffect, useRef, useState} from 'react';
+import styled, {css} from 'styled-components';
+import {motion} from 'framer-motion';
+import {GoLocation, GoSearch} from 'react-icons/go';
+import {AiOutlineDown, AiOutlineUp} from 'react-icons/ai';
+import {useMediaQuery} from 'react-responsive';
 
 export interface JobFilterProps extends HTMLAttributes<HTMLDivElement> {
     submitText: string
@@ -59,7 +59,7 @@ const Base:React.FC<JobFilterProps> = forwardRef((
 
     const handleSubmit = () => {
         handleSelected && handleSelected({
-            q: inputRef.current?.value|| "",
+            q: inputRef.current?.value|| '',
             ...location
         });
     };
@@ -71,24 +71,24 @@ const Base:React.FC<JobFilterProps> = forwardRef((
     }
 
     useEffect(() => {
-        document.addEventListener("click", handleClickOutside, true)
+        document.addEventListener('click', handleClickOutside, true)
     }, []);
 
     return (
         <div {...props} ref={ref}>
-            <div className="search_post_box">
+            <div className='search_post_box'>
                 <GoSearch size={23}/>
                 <input ref={inputRef} placeholder={placeholderPost}/>
             </div>
-            <div className="select_location_box">
+            <div className='select_location_box'>
                 <GoLocation size={23}/>
-                <div className="location" onClick={toggleOpen} ref={locationRef}>
-                    <div className="selected">{location?.name || options[0].name}
+                <div className='location' onClick={toggleOpen} ref={locationRef}>
+                    <div className='selected'>{location?.name || options[0].name}
                         {!isOpen ? <AiOutlineDown/>: <AiOutlineUp/>}
                     </div>
                     {isOpen && (
                         <motion.ul
-                            className="options"
+                            className='options'
                             initial={{ opacity: 0.2, top: 30}}
                             animate={{ opacity: 1, top: isMobileScreen ? 52.2: 73.2}}
                         >
@@ -101,11 +101,11 @@ const Base:React.FC<JobFilterProps> = forwardRef((
                     )}
                 </div>
             </div>
-            <div className="submit">
-                <button type="submit" onClick={handleSubmit}>{submitText}</button>
+            <div className='submit'>
+                <button type='submit' onClick={handleSubmit}>{submitText}</button>
             </div>
             {resultCount && (
-                <div className="results">
+                <div className='results'>
                     <i>Recherche: {resultCount} resutats avec la mention ¨{inputRef.current?.value}¨</i>
                 </div>
             )}
@@ -157,7 +157,7 @@ export const JobFilter = styled(Base)`
   font-family: 'Inter',sans-serif;
   flex-direction: row;
   flex-wrap: wrap;
-  padding: ${({resultCount}) => resultCount && "1rem"} ;
+  padding: ${({resultCount}) => resultCount && '1rem'} ;
 
   .search_post_box
   {

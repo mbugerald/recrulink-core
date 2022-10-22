@@ -1,7 +1,7 @@
-import {motion} from "framer-motion";
-import React, {FC, HTMLAttributes} from "react";
-import styled from "styled-components";
-import {useMediaQuery} from "react-responsive";
+import {motion} from 'framer-motion';
+import React, {FC, HTMLAttributes} from 'react';
+import styled from 'styled-components';
+import {useMediaQuery} from 'react-responsive';
 
 export interface DrawerProps extends HTMLAttributes<HTMLDivElement> {
     children?: JSX.Element | JSX.Element[]
@@ -21,11 +21,11 @@ const Base:FC<DrawerProps> = (
 
     return isOpen ? (
         <nav {...props}>
-            <div className="overlay"/>
+            <div className='overlay'/>
             <motion.div
-                className="panel"
-                initial={{ width: 0, opacity: 0.1, display: "none"}}
-                animate={{ width: isMobileScreen ? "100%": isTabletScreen ? "60%" :"38.3%", right: 0, opacity: 1, display: "block" }}
+                className='panel'
+                initial={{ width: 0, opacity: 0.1, display: 'none'}}
+                animate={{ width: isMobileScreen ? '100%': isTabletScreen ? '60%' :'38.3%', right: 0, opacity: 1, display: 'block' }}
                 transition={{ duration: 0.5 }}
             >
                 {children}

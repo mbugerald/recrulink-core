@@ -1,12 +1,12 @@
-import React, {createElement, FC, Fragment, useEffect, useRef, useState} from "react";
-import styled from "styled-components";
-import {HTMLMotionProps, motion} from "framer-motion";
+import React, {createElement, FC, Fragment, useEffect, useRef, useState} from 'react';
+import styled from 'styled-components';
+import {HTMLMotionProps, motion} from 'framer-motion';
 import {LazyLoadImage} from 'react-lazy-load-image-component';
-import {AiOutlineDown, AiOutlineUp} from "react-icons/ai";
-import {IconType} from "react-icons";
-import {useNavigate} from "@tanstack/react-location";
+import {AiOutlineDown, AiOutlineUp} from 'react-icons/ai';
+import {IconType} from 'react-icons';
+import {useNavigate} from '@tanstack/react-location';
 
-export interface SessionAvatarProps extends HTMLMotionProps<"div"> {
+export interface SessionAvatarProps extends HTMLMotionProps<'div'> {
     dropdownBackground?: string | undefined
     dropdownColor?: string | undefined
     height?: number
@@ -47,7 +47,7 @@ const Base:FC<SessionAvatarProps> = (
     }
 
     useEffect(() => {
-        document.addEventListener("click", handleClickOutside, true)
+        document.addEventListener('click', handleClickOutside, true)
     }, []);
 
     return (
@@ -57,31 +57,31 @@ const Base:FC<SessionAvatarProps> = (
                 height={height}
                 src={image?.src}
                 width={width}
-                className="image"
+                className='image'
                 onClick={toggleOpen}
             />
             {createElement(
                 isOpen ? AiOutlineUp : AiOutlineDown,
                 {
-                    className: "dropdown_icon"
+                    className: 'dropdown_icon'
                 },
                 null
             )}
             {isOpen &&(
                 <motion.ul
-                    className="dropdown"
+                    className='dropdown'
                     initial={{ top: 30}}
                     animate={{ top: 60}}
                 >
                     {options?.map(({title, icon, link}, idx) => (
-                        <motion.li key={idx} className="dropdown_option" onClick={() => navigateTo({to: link, replace: true})}>
+                        <motion.li key={idx} className='dropdown_option' onClick={() => navigateTo({to: link, replace: true})}>
                             <Fragment>
                                 {icon && (
-                                    <span className="icon">
+                                    <span className='icon'>
                                         {createElement(icon, {}, null)}
                                     </span>
                                 )}
-                                <p className="title">{title}</p>
+                                <p className='title'>{title}</p>
                             </Fragment>
                         </motion.li>
                     ))}
@@ -98,14 +98,14 @@ export const SessionAvatar = styled(Base)`
   align-items: center;
   gap: 10px;
   flex-wrap: wrap;
-  height: ${({ width }) => width ? `${width}px` : "45.68px"};
+  height: ${({ width }) => width ? `${width}px` : '45.68px'};
   cursor: pointer;
   position: relative;
   max-width: 140px;
   font-family: Inter,sans-serif;
 
   .image {
-    width: ${({ height}) => height ? `${height}px`: "48.3px"};
+    width: ${({ height}) => height ? `${height}px`: '48.3px'};
     height: 100%;
     border-radius: 50%;
     object-fit: cover;
@@ -119,8 +119,8 @@ export const SessionAvatar = styled(Base)`
   .dropdown {
     position: absolute;
     min-width: 160px;
-    background-color: ${({ dropdownBackground }) => dropdownBackground || "#4F95B0"};
-    color: ${({ dropdownColor }) => dropdownColor || "#FFF"};
+    background-color: ${({ dropdownBackground }) => dropdownBackground || '#4F95B0'};
+    color: ${({ dropdownColor }) => dropdownColor || '#FFF'};
     z-index: 15;
     border-radius: 6px;
     padding: 1rem;
@@ -133,7 +133,7 @@ export const SessionAvatar = styled(Base)`
       content: '';
       height: 20px;
       width: 20px;
-      background-color: ${({ dropdownBackground }) => dropdownBackground || "#4F95B0"};
+      background-color: ${({ dropdownBackground }) => dropdownBackground || '#4F95B0'};
       left: 20px;
       top: -2px;
       transform: rotate(45deg);
@@ -155,8 +155,8 @@ export const SessionAvatar = styled(Base)`
       .icon {
         width: 35px;
         height: 35px;
-        background-color: ${({ dropdownBackground }) => dropdownBackground || "#115D7A"};
-        color: ${({ dropdownColor }) => dropdownColor || "#FFF"};
+        background-color: ${({ dropdownBackground }) => dropdownBackground || '#115D7A'};
+        color: ${({ dropdownColor }) => dropdownColor || '#FFF'};
         border-radius: 7px;
         display: flex;
         align-items: center;

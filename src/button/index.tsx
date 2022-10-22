@@ -1,12 +1,12 @@
-import React, {createElement, FC} from "react";
-import styled from "styled-components";
-import {motion} from "framer-motion";
-import {BiLoaderAlt} from "react-icons/bi";
-import {IconType} from "react-icons";
+import React, {createElement, FC} from 'react';
+import styled from 'styled-components';
+import {motion} from 'framer-motion';
+import {BiLoaderAlt} from 'react-icons/bi';
+import {IconType} from 'react-icons';
 
 export interface ButtonProps extends  Omit<React.HTMLProps<HTMLButtonElement>, 'ref'> {
     /** Adds button variant styles **/
-    variant?: "primary" | "secondary" | "tertiary" | "warning" | "link" | "plain" | "control" | "quaternary" | "quinary"
+    variant?: 'primary' | 'secondary' | 'tertiary' | 'warning' | 'link' | 'plain' | 'control' | 'quaternary' | 'quinary'
     /** Adds block styling to button **/
     isBlock?: boolean | undefined;
     /** Adds disabled styling and disables the button using the disabled html attribute **/
@@ -30,118 +30,118 @@ export interface ButtonProps extends  Omit<React.HTMLProps<HTMLButtonElement>, '
 }
 
 type PaletteTypes = {
-    primary: "primary"
-    secondary: "secondary"
-    tertiary:"tertiary"
-    warning : "warning"
-    link : "link"
-    plain : "plain"
-    control : "control"
-    quaternary : "quaternary"
-    quinary : "quinary"
+    primary: 'primary'
+    secondary: 'secondary'
+    tertiary:'tertiary'
+    warning : 'warning'
+    link : 'link'
+    plain : 'plain'
+    control : 'control'
+    quaternary : 'quaternary'
+    quinary : 'quinary'
 }
 
 export const ButtonVariants:PaletteTypes = {
-    primary: "primary",
-    secondary: "secondary",
-    tertiary:"tertiary",
-    warning : "warning",
-    link : "link",
-    plain : "plain",
-    control : "control",
-    quaternary : "quaternary",
-    quinary : "quinary"
+    primary: 'primary',
+    secondary: 'secondary',
+    tertiary:'tertiary',
+    warning : 'warning',
+    link : 'link',
+    plain : 'plain',
+    control : 'control',
+    quaternary : 'quaternary',
+    quinary : 'quinary'
 }
 
 const palettes = {
     primary: {
-        bg: "#3CB8DE",
-        fg: "#ffffff",
-        border: "1px solid #3CB8DE",
+        bg: '#3CB8DE',
+        fg: '#ffffff',
+        border: '1px solid #3CB8DE',
         danger: {
-            bg: "#c9190b",
-            fg: "#ffffff",
-            border: "1px solid #c9190b"
+            bg: '#c9190b',
+            fg: '#ffffff',
+            border: '1px solid #c9190b'
         }
     },
     secondary: {
-        bg: "inherit",
-        fg: "#3CB8DE",
-        border: "1px solid #3CB8DE",
+        bg: 'inherit',
+        fg: '#3CB8DE',
+        border: '1px solid #3CB8DE',
         danger: {
-            bg: "inherit",
-            fg: "#c9190b",
-            border: "1px solid #c9190b"
+            bg: 'inherit',
+            fg: '#c9190b',
+            border: '1px solid #c9190b'
         }
     },
     tertiary: {
-        bg: "inherit",
-        fg: "#144052",
-        border: "1px solid #144052  ",
+        bg: 'inherit',
+        fg: '#144052',
+        border: '1px solid #144052  ',
         danger: {
-            bg: "inherit",
-            fg: "#c9190b",
-            border: "1px solid #c9190b"
+            bg: 'inherit',
+            fg: '#c9190b',
+            border: '1px solid #c9190b'
         }
     },
     quaternary: {
-        bg: "#144052",
-        fg: "#ffffff",
-        border: "1px solid #144052",
+        bg: '#144052',
+        fg: '#ffffff',
+        border: '1px solid #144052',
         danger: {
-            bg: "#c9190b",
-            fg: "#ffffff",
-            border: "1px solid #c9190b"
+            bg: '#c9190b',
+            fg: '#ffffff',
+            border: '1px solid #c9190b'
         }
     },
     quinary: {
-        bg: "#E2F4F5",
-        fg: "#3C999E",
-        border: "1px solid #E2F4F5",
+        bg: '#E2F4F5',
+        fg: '#3C999E',
+        border: '1px solid #E2F4F5',
         danger: {
-            bg: "#c9190b",
-            fg: "#ffffff",
-            border: "1px solid #c9190b"
+            bg: '#c9190b',
+            fg: '#ffffff',
+            border: '1px solid #c9190b'
         }
     },
     plain: {
-        bg: "inherit",
-        fg: "inherit",
-        border: "1px solid #FFFFFF",
+        bg: 'inherit',
+        fg: 'inherit',
+        border: '1px solid #FFFFFF',
         danger: {
-            bg: "inherit",
-            fg: "#c9190b",
-            border: "1px solid #c9190b"
+            bg: 'inherit',
+            fg: '#c9190b',
+            border: '1px solid #c9190b'
         }
     },
     link: {
-        bg: "inherit",
-        fg: "#06c",
-        border: "1px solid #FFFFFF",
+        bg: 'inherit',
+        fg: '#06c',
+        border: '1px solid #FFFFFF',
         danger: {
-            bg: "inherit",
-            fg: "#c9190b",
-            border: "none"
+            bg: 'inherit',
+            fg: '#c9190b',
+            border: 'none'
         }
     },
     control: {
-        bg: "inherit",
-        fg: "inherit",
-        border: "1px solid #FFFFFF",
+        bg: 'inherit',
+        fg: 'inherit',
+        border: '1px solid #FFFFFF',
         danger: {
-            bg: "inherit",
-            fg: "#c9190b",
-            border: "1px solid #c9190b"
+            bg: 'inherit',
+            fg: '#c9190b',
+            border: '1px solid #c9190b'
         }
     },
     warning: {
-        bg: "#f0ab00",
-        fg: "#151515",
-        border: "1px solid #f0ab00",
+        bg: '#f0ab00',
+        fg: '#151515',
+        border: '1px solid #f0ab00',
         danger: {
-            bg: "#c9190b",
-            fg: "#ffffff",
-            border: "1px solid #c9190b"
+            bg: '#c9190b',
+            fg: '#ffffff',
+            border: '1px solid #c9190b'
         }
     },
 
@@ -149,7 +149,7 @@ const palettes = {
 
 const spinTransition = {
     loop: Infinity,
-    ease: "linear",
+    ease: 'linear',
     duration: 1,
 };
 
@@ -171,7 +171,7 @@ const Base:FC<ButtonProps> =(
         <button ref={innerRef} {...props} disabled={isDisabled}>
             {isLoading && (
                 <motion.div
-                    className="spinner"
+                    className='spinner'
                     animate={{ rotate: 360 }}
                     transition={spinTransition}
                 >
@@ -182,8 +182,8 @@ const Base:FC<ButtonProps> =(
             {icon && createElement(
                 icon, {
                     style: {
-                        fontSize: "1.37rem",
-                        marginLeft: iconEdged ? "auto": undefined
+                        fontSize: '1.37rem',
+                        marginLeft: iconEdged ? 'auto': undefined
                     }}, null)}
         </button>
     )
@@ -191,38 +191,38 @@ const Base:FC<ButtonProps> =(
 
 export const Button = styled(Base)`
   background-color: ${({ variant, isDisabled, isDanger }) =>
-          isDisabled ? "rgba(230, 230, 230, 0.97)" :
+          isDisabled ? 'rgba(230, 230, 230, 0.97)' :
                   variant ? isDanger ?
-                                  palettes[ButtonVariants[variant||"primary"]].danger.bg :
-                                  palettes[ButtonVariants[variant||"primary"]].bg :
+                                  palettes[ButtonVariants[variant||'primary']].danger.bg :
+                                  palettes[ButtonVariants[variant||'primary']].bg :
                           isDanger ? palettes[ButtonVariants.primary].danger.bg:
                                   palettes[ButtonVariants.primary].bg};
   color: ${({ variant, isDisabled, isDanger }) =>
-          isDisabled ? "rgba(0, 0, 0, 0.48)" :
+          isDisabled ? 'rgba(0, 0, 0, 0.48)' :
                   variant ? isDanger ?
-                                  palettes[ButtonVariants[variant||"primary"]]["danger"].fg :
-                                  palettes[ButtonVariants[variant||"primary"]].fg :
+                                  palettes[ButtonVariants[variant||'primary']]['danger'].fg :
+                                  palettes[ButtonVariants[variant||'primary']].fg :
                           isDanger ? palettes[ButtonVariants.primary].danger.fg:
                                   palettes[ButtonVariants.primary].fg};
   border: ${({ variant, isDisabled, isDanger }) =>
-          isDisabled ? "#d2d2d2d2" :
+          isDisabled ? '#d2d2d2d2' :
                   variant ? isDanger ?
-                                  palettes[ButtonVariants[variant||"primary"]]["danger"].border:
-                                  palettes[ButtonVariants[variant||"primary"]].border :
+                                  palettes[ButtonVariants[variant||'primary']]['danger'].border:
+                                  palettes[ButtonVariants[variant||'primary']].border :
                           isDanger ? palettes[ButtonVariants.primary].danger.border:
                                   palettes[ButtonVariants.primary].border};
-  width: ${({ isBlock }) => isBlock && "100%"};
+  width: ${({ isBlock }) => isBlock && '100%'};
   position: relative;
   display: flex;
-  grid-template-columns: ${({ isLoading, icon }) => (isLoading && icon) ? "20% 60% 20%": isLoading ? "20% 80%": icon ? "80% 20%": "1fr"};
-  grid-gap: ${({ isLoading }) => isLoading && "6px"};
+  grid-template-columns: ${({ isLoading, icon }) => (isLoading && icon) ? '20% 60% 20%': isLoading ? '20% 80%': icon ? '80% 20%': '1fr'};
+  grid-gap: ${({ isLoading }) => isLoading && '6px'};
   align-items: center;
-  justify-content: ${({ isBlock }) => isBlock && "center"};
+  justify-content: ${({ isBlock }) => isBlock && 'center'};
   flex-wrap: wrap;
   flex-direction: row;
   gap: 10px;
   cursor: pointer;
-  padding: ${({ isLoading }) => isLoading ? "0.375rem 1.172rem": "0.375rem 0.852rem"};
+  padding: ${({ isLoading }) => isLoading ? '0.375rem 1.172rem': '0.375rem 0.852rem'};
   outline:none;
   line-height: 1.5px;
   font-size: 1rem;

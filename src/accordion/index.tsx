@@ -1,8 +1,8 @@
-import React, {Children, cloneElement, Dispatch, FC, SetStateAction, useEffect, useState} from "react";
-import styled from "styled-components";
-import {motion} from "framer-motion";
-import {AccordionItem} from "./item";
-import {AiOutlineSelect} from "react-icons/ai";
+import React, {Children, cloneElement, Dispatch, FC, SetStateAction, useEffect, useState} from 'react';
+import styled from 'styled-components';
+import {motion} from 'framer-motion';
+import {AccordionItem} from './item';
+import {AiOutlineSelect} from 'react-icons/ai';
 
 export interface AccordionProps {
     children?: JSX.Element | JSX.Element[];
@@ -30,7 +30,7 @@ const Base:FC<AccordionProps> = (
     const allChildren = Children.map(children, (child) => {
         if (!child) {
             return null
-        } else if (child && ![AccordionItem].includes("type" in child && child.type)) {
+        } else if (child && ![AccordionItem].includes('type' in child && child.type)) {
 
             throw new Error(
                 // @ts-ignore
@@ -54,7 +54,7 @@ const Base:FC<AccordionProps> = (
     return (
         <motion.div {...props}>
             {isCheckable && showCount && (
-                <motion.div className="count" initial={{ scale: 0.5}} animate={{ scale: 1}}>
+                <motion.div className='count' initial={{ scale: 0.5}} animate={{ scale: 1}}>
                     <AiOutlineSelect/>{' '}<i>Options : {items.length}</i>
                 </motion.div>
             )}
@@ -65,7 +65,7 @@ const Base:FC<AccordionProps> = (
 
 export const Accordion = styled(Base)`
   border-radius: 10px;
-  background-color: ${({backgroundColor}) => backgroundColor || "#FAFCFD"};
+  background-color: ${({backgroundColor}) => backgroundColor || '#FAFCFD'};
   padding: 30px;
 
   .count {

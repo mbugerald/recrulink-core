@@ -1,8 +1,8 @@
-import React, {Children, cloneElement, FC, useState} from "react";
-import styled from "styled-components";
-import {motion, MotionProps} from "framer-motion";
-import {AccordionContent} from "../content";
-import {AccordionToggle} from "../toggle";
+import React, {Children, cloneElement, FC, useState} from 'react';
+import styled from 'styled-components';
+import {motion, MotionProps} from 'framer-motion';
+import {AccordionContent} from '../content';
+import {AccordionToggle} from '../toggle';
 
 export interface AccordionItemProps extends MotionProps {
     children?: JSX.Element | JSX.Element[];
@@ -21,7 +21,7 @@ const Base:FC<AccordionItemProps> = (
     const allChildren = Children.map(children, (child) => {
         if (!child) {
             return null
-        } else if (child && ![AccordionContent, AccordionToggle].includes("type" in child && child.type)) {
+        } else if (child && ![AccordionContent, AccordionToggle].includes('type' in child && child.type)) {
 
             throw new Error(
                 // @ts-ignore
@@ -34,16 +34,16 @@ const Base:FC<AccordionItemProps> = (
                 setOpen: setOpen,
                 isCheckable:
                 // @ts-ignore
-                    props["isCheckable"],
+                    props['isCheckable'],
                 items:
                 // @ts-ignore
-                    props["items"],
+                    props['items'],
                 setItems:
                 // @ts-ignore
-                    props["setItems"],
+                    props['setItems'],
                 hasBorders:
                 // @ts-ignore
-                    props["hasBorders"]
+                    props['hasBorders']
             });
         }
     });

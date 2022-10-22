@@ -1,37 +1,37 @@
-import React, {createElement, FC, forwardRef, Fragment, HTMLAttributes, useRef} from "react";
-import styled from "styled-components";
-import {IconType} from "react-icons";
-import {motion} from "framer-motion";
+import React, {createElement, FC, forwardRef, Fragment, HTMLAttributes, useRef} from 'react';
+import styled from 'styled-components';
+import {IconType} from 'react-icons';
+import {motion} from 'framer-motion';
 
 export interface TextInputProps extends HTMLAttributes<HTMLInputElement>{
     icon?: IconType
     isBlocked?: boolean | undefined
     placeholder?: string
-    iconPosition?: "left" | "right"
+    iconPosition?: 'left' | 'right'
     value?: string
     defaultValue?: string,
     name?: string
-    validated?: "error" | "success" | "warning" | "default" | undefined
+    validated?: 'error' | 'success' | 'warning' | 'default' | undefined
     borderColor?: string
     ref?: React.Ref<HTMLDivElement> | undefined
 }
 
 const validation = {
     success: {
-        borderBottom: "1px solid #3e8635",
-        iconColor: "#3e8635"
+        borderBottom: '1px solid #3e8635',
+        iconColor: '#3e8635'
     },
     error: {
-        borderBottom: "1px solid #a30000",
-        iconColor: "#a30000"
+        borderBottom: '1px solid #a30000',
+        iconColor: '#a30000'
     },
     warning: {
-        borderBottom: "1px solid #f0ab00",
-        iconColor: "#f0ab00"
+        borderBottom: '1px solid #f0ab00',
+        iconColor: '#f0ab00'
     },
     default: {
-        borderBottom: "1px solid #3e8635",
-        iconColor: "#3e8635"
+        borderBottom: '1px solid #3e8635',
+        iconColor: '#3e8635'
     }
 }
 
@@ -59,23 +59,23 @@ const Base:FC<TextInputProps> = forwardRef((
                     htmlFor={name}
                     initial={{ y: -200, opacity: 0.4}}
                     animate={{ y: 0, opacity: 1, fontSize: '14px', color: 'inherit'}}
-                    transition={{ type: "spring", stiffness: 100 }}
+                    transition={{ type: 'spring', stiffness: 100 }}
                 >
                     {props.placeholder}
                 </motion.label>
             )}
             <div {...props} ref={ref}>
-                {(icon && iconPosition !== "right" )&& createElement(icon, {className: "icon"}, null)}
+                {(icon && iconPosition !== 'right' )&& createElement(icon, {className: 'icon'}, null)}
                 <input
-                    type="text"
-                    className={"text-input"}
-                    placeholder={props.placeholder|| "Placeholder"}
+                    type='text'
+                    className={'text-input'}
+                    placeholder={props.placeholder|| 'Placeholder'}
                     value={value}
                     defaultValue={defaultValue}
                     name={name}
                     ref={inputRef}
                 />
-                {(icon && iconPosition === "right" )&& createElement(icon, {className: "icon"}, null)}
+                {(icon && iconPosition === 'right' )&& createElement(icon, {className: 'icon'}, null)}
             </div>
         </Fragment>
     )
@@ -88,7 +88,7 @@ export const TextInput = styled(Base)`
   flex-wrap: wrap;
   gap: 10px;
   border-bottom: ${({validated, borderColor}) =>
-          validated ? validation[validated].borderBottom : `1px solid ${borderColor || "#000000"}`};
+          validated ? validation[validated].borderBottom : `1px solid ${borderColor || '#000000'}`};
   position: relative;
   width: 100%;
   margin-bottom: 1rem;
@@ -96,7 +96,7 @@ export const TextInput = styled(Base)`
 
   .icon {
     color: ${({validated}) =>
-            validated ? validation[validated].iconColor : "inherit"};
+            validated ? validation[validated].iconColor : 'inherit'};
     margin: auto 0;
     height: 23px;
     width: 23px;

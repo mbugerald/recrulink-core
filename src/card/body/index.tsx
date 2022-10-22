@@ -1,10 +1,10 @@
-import React, {FC, HTMLAttributes} from "react";
-import styled from "styled-components";
+import React, {FC, HTMLAttributes} from 'react';
+import styled from 'styled-components';
 
 export interface CardBodyProps extends HTMLAttributes<HTMLDivElement>{
-    align?: "start" | "end" | "center" | undefined
-    justify?: "start" | "end" | "center" |undefined
-    wrap?: "no-wrap" | "wrap" | "wrap-inverse" | undefined
+    align?: 'start' | 'end' | 'center' | undefined
+    justify?: 'start' | 'end' | 'center' |undefined
+    wrap?: 'no-wrap' | 'wrap' | 'wrap-inverse' | undefined
     gap?: number
 }
 
@@ -33,7 +33,7 @@ export const CardBody = styled(Base)`
   flex-direction: column;
   padding: 1rem;
   flex-wrap: ${({ wrap }) => wrap};
-  align-items: ${({ align }) => align === "center" ? "center" : `flex-${align}`};
-  justify-content: ${({ justify }) => justify === "center" ? "center" : `flex-${justify}`};
+  align-items: ${({ align }) => align === 'center' ? 'center' : `flex-${align}`};
+  justify-content: ${({ justify }) => justify === 'center' ? 'center' : `flex-${justify}`};
   gap: ${({ gap }) => `${gap}`};
 `;

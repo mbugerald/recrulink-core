@@ -1,47 +1,47 @@
-import React, {FC, forwardRef, HTMLAttributes} from "react";
-import styled from "styled-components";
+import React, {FC, forwardRef, HTMLAttributes} from 'react';
+import styled from 'styled-components';
 
 export interface LabelProps extends HTMLAttributes<HTMLSpanElement> {
-    variant?: "primary" | "info" | "warning" | "danger" | "success"
+    variant?: 'primary' | 'info' | 'warning' | 'danger' | 'success'
     ref?: React.Ref<HTMLLabelElement> | undefined
 }
 
 type PaletteTypes = {
-    info: "info",
-    primary: "primary",
-    warning: "warning",
-    danger:"danger",
-    success : "success"
+    info: 'info',
+    primary: 'primary',
+    warning: 'warning',
+    danger:'danger',
+    success : 'success'
 }
 
 export const LabelVariants:PaletteTypes = {
-    info: "info",
-    primary: "primary",
-    warning: "warning",
-    danger:"danger",
-    success : "success"
+    info: 'info',
+    primary: 'primary',
+    warning: 'warning',
+    danger:'danger',
+    success : 'success'
 }
 
 const palettes = {
     primary : {
-        bg: "#7CCFD4",
-        fg: "#FFFFFF"
+        bg: '#7CCFD4',
+        fg: '#FFFFFF'
     },
     info: {
-        bg: "#EBEAFA",
-        fg: "#4642D9"
+        bg: '#EBEAFA',
+        fg: '#4642D9'
     },
     warning: {
-        bg: "#FCF7E5",
-        fg: "#E3A515"
+        bg: '#FCF7E5',
+        fg: '#E3A515'
     },
     success: {
-        bg: "#E2F4F5",
-        fg: "#3C999E"
+        bg: '#E2F4F5',
+        fg: '#3C999E'
     },
     danger: {
-        bg: "#faeae8",
-        fg: "#c9190b"
+        bg: '#faeae8',
+        fg: '#c9190b'
     }
 };
 

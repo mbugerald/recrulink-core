@@ -1,7 +1,7 @@
-import React, {createElement, FC} from "react";
-import styled, {css} from "styled-components";
-import {motion} from "framer-motion";
-import {AiOutlineDown} from "react-icons/ai";
+import React, {createElement, FC} from 'react';
+import styled, {css} from 'styled-components';
+import {motion} from 'framer-motion';
+import {AiOutlineDown} from 'react-icons/ai';
 
 export interface AccordionToggleProps {
     children?: any;
@@ -15,14 +15,14 @@ const Base:FC<AccordionToggleProps> = (
 ) => {
 
     // @ts-ignore
-    const toggleOpen = () => props["setOpen"]!!(!props["isOpen"]);
+    const toggleOpen = () => props['setOpen']!!(!props['isOpen']);
 
     return (
         <motion.dt {...props}>
-            <div className="content" onClick={toggleOpen}>
+            <div className='content' onClick={toggleOpen}>
                 {children}
             </div>
-            <div className="options" onClick={toggleOpen}>
+            <div className='options' onClick={toggleOpen}>
                 {createElement(AiOutlineDown, {}, null)}
             </div>
         </motion.dt>
@@ -36,7 +36,7 @@ const element = ( isOptions?: boolean) => css`
   font-weight: 600;
   font-size: 16px;
   line-height: 19px;
-  justify-content: ${isOptions ? "flex-end" : "flex-start"}
+  justify-content: ${isOptions ? 'flex-end' : 'flex-start'}
 `;
 
 export const AccordionToggle = styled(Base)`

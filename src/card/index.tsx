@@ -1,8 +1,8 @@
-import React, {Children, cloneElement, FC, HTMLAttributes} from "react";
-import styled from "styled-components";
-import {CardHeader} from "./header";
-import {CardBody} from "./body";
-import {CardFooter} from "./footer";
+import React, {Children, cloneElement, FC, HTMLAttributes} from 'react';
+import styled from 'styled-components';
+import {CardHeader} from './header';
+import {CardBody} from './body';
+import {CardFooter} from './footer';
 
 export interface CardProps extends HTMLAttributes<HTMLDivElement>{
     children?: JSX.Element | JSX.Element[];

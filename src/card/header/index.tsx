@@ -1,12 +1,12 @@
-import React, {FC, HTMLAttributes, ReactNode, useEffect, useRef, useState} from "react";
-import styled from "styled-components";
-import {FaEllipsisV} from "react-icons/fa";
-import {motion} from "framer-motion";
+import React, {FC, HTMLAttributes, ReactNode, useEffect, useRef, useState} from 'react';
+import styled from 'styled-components';
+import {FaEllipsisV} from 'react-icons/fa';
+import {motion} from 'framer-motion';
 
 export interface CardHeaderProps extends HTMLAttributes<HTMLDivElement>{
-    align?: "start" | "end" | "center" | undefined
-    justify?: "start" | "end" | "center" |undefined
-    wrap?: "no-wrap" | "wrap" | "wrap-inverse" | undefined
+    align?: 'start' | 'end' | 'center' | undefined
+    justify?: 'start' | 'end' | 'center' |undefined
+    wrap?: 'no-wrap' | 'wrap' | 'wrap-inverse' | undefined
     gap?: number
     hasActions?: boolean
     actions?: ReactNode | undefined
@@ -39,20 +39,20 @@ const Base:FC<CardHeaderProps> = (
     }
 
     useEffect(() => {
-        document.addEventListener("click", handleClickOutside, true)
+        document.addEventListener('click', handleClickOutside, true)
     }, []);
 
     return (
         <nav {...props} ref={headerRef}>
-            <div className="container">
+            <div className='container'>
                 {children}
             </div>
             {hasActions && (
-                <div className="actions">
+                <div className='actions'>
                     <FaEllipsisV onClick={toggleOpen}/>
                     {isActionOpen && actions && (
                         <motion.div
-                            className="dropdown"
+                            className='dropdown'
                             initial={{ opacity: 0.8, y: 10}}
                             animate={{ opacity: 1, y: 28}}
                         >
@@ -72,13 +72,13 @@ export const CardHeader = styled(Base)`
   display: grid;
   padding: 1rem;
   position: relative;
-  grid-template-columns: ${({ hasActions}) => hasActions ? "90% 10%": "1fr" };
+  grid-template-columns: ${({ hasActions}) => hasActions ? '90% 10%': '1fr' };
 
   .container {
     display: flex;
     flex-wrap: ${({ wrap }) => wrap};
-    align-items: ${({ align }) => align === "center" ? "center" : `flex-${align}`};
-    justify-content: ${({ justify }) => justify === "center" ? "center" : `flex-${justify}`};
+    align-items: ${({ align }) => align === 'center' ? 'center' : `flex-${align}`};
+    justify-content: ${({ justify }) => justify === 'center' ? 'center' : `flex-${justify}`};
     gap: ${({ gap }) => `${gap}`};
   }
 
