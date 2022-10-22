@@ -33,9 +33,11 @@ jobs:
         run: yarn build
 
   publish:
+
     runs-on: ubuntu-latest
     if: ${{ github.ref === 'refs/heads/main' }}
     needs: [build]
+
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
